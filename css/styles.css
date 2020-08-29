@@ -1,0 +1,124 @@
+:root{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  --button-color: black;
+  --button-border: 1px solid black;
+  --button-background-color: black;
+  --border: 1px dotted black;
+  --letter-spacing: 0.02rem;
+}
+
+body {
+  margin: 0;
+}
+
+.top {
+  width: 100%;
+  padding: 7px;
+  background: black;
+  text-align: center;
+  color: white;
+  font-size: 12px;  
+  letter-spacing: var(--letter-spacing);
+}
+
+.top p{
+  margin: 0;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 0 20px;
+  background: white;
+  z-index: 2;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+.highlight {
+  background: linear-gradient(180deg,rgba(255,255,255,0) 50%, #FFD0AE 50%);
+}
+
+.button {
+  color: var(--button-color);
+  border: var(--button-border);
+  text-decoration: none;
+  padding: 10px;
+  font-weight: bold;
+  width: 120px;
+  text-align: center;
+}
+
+.button:hover {
+  background: var(--button-background-color);
+  color: white;
+  transition: background-color .5s;
+}
+
+.stats {
+border: var(--border);
+}
+
+.intro h2 {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.intro p {
+  margin: 0 auto 100px auto;
+  width: 600px;
+  text-align: center;
+}
+
+section {
+  padding: 0 170px 0 170px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 50px;
+}
+
+.grid-item{
+  margin: 20px 0 20px 0;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* h4::before {
+  content: "●";
+  padding-right: 10px;
+  font-size: 30px;
+  line-height: 0;
+} */
+
+.heading {
+  text-align: left;
+  border-bottom: 1px dotted black;
+  border-top: 1px dotted black;
+  height: 60px;
+  margin-top: 100px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.who-uses-pa p{
+  font-size: 30px;
+}
+
