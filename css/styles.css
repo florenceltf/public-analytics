@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
 :root{
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 16px;
-  --button-color: black;
-  --button-border: 1px solid black;
-  --button-background-color: black;
-  --border: 1px dotted black;
-  --letter-spacing: 0.02rem;
+}
+
+::selection {
+  background: #000;
+  color: #fff;
 }
 
 body {
@@ -14,15 +16,18 @@ body {
 
 .top {
   width: 100%;
-  padding: 7px;
+  padding: 7px 0 7px 0;
+  height: 20px;
   background: black;
-  text-align: center;
   color: white;
-  font-size: 12px;  
-  letter-spacing: var(--letter-spacing);
+  display: flex;
+  justify-content: center;
 }
 
-.top p{
+h6 {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;  
+  font-weight: normal;
   margin: 0;
 }
 
@@ -32,53 +37,131 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px 0 20px;
+  padding: 10px;
+  z-index: 1;
   background: white;
-  z-index: 2;
+  border-bottom: 1px dotted black;
+}
+
+header div,
+header h1,
+header nav{
+  flex : 1;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 24px;
+  text-align: center;
+  margin: 0;
+  flex-wrap: nowrap;
 }
 
-.highlight {
-  background: linear-gradient(180deg,rgba(255,255,255,0) 50%, #FFD0AE 50%);
+header nav {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .button {
-  color: var(--button-color);
-  border: var(--button-border);
-  text-decoration: none;
-  padding: 10px;
   font-weight: bold;
-  width: 120px;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 5px;
+  width: 100px;
   text-align: center;
+  background: white;
+  color: black;
+  border: 1px solid black;
+  flex-wrap: nowrap;
 }
 
 .button:hover {
-  background: var(--button-background-color);
   color: white;
+  background: black;
   transition: background-color .5s;
 }
 
+a {
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+header a {
+  margin-left: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.highlight {
+  background: linear-gradient(180deg,rgba(255,255,255,0) 50%, yellow 50%);
+}
+
 .stats {
-border: var(--border);
+  border-bottom: 1px dotted black;
+  padding: 10px 10px 10px 10px;
+  height: 50px;
+  font-family: 'Space Mono', monospace;
+  display: flex;
+}
+
+.stats-item {
+  padding-right: 60px;
+}
+
+.up-arrow {
+	border-color: rgb(0, 255, 0) transparent;
+	border-style: solid;
+	border-width: 0px 6px 6px 6px;
+	height: 0px;
+  width: 0px;
+  display: inline;
+  position: relative;
+  top: -10px;
+  margin-right: 5px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  margin-bottom: 150px;
+  padding: 0 50px 0 200px;
+}
+
+.intro {
+  margin: 50px 200px 0 200px;
+  text-align: center;
 }
 
 .intro h2 {
-  font-size: 30px;
-  text-align: center;
-  margin-top: 100px;
+  font-size: 60px;
+  margin-top: 30px;
+  letter-spacing: 0.05rem;
+  font-weight: normal;
 }
 
 .intro p {
-  margin: 0 auto 100px auto;
-  width: 600px;
+  margin: 0 auto 30px auto;
+  text-align: center;
+  max-width: 600px;
+}
+
+.intro a {
   text-align: center;
 }
 
-section {
-  padding: 0 170px 0 170px;
+.image {
+  width: 100%;
+  height: 600px;
+  background: black;
+  margin-top: 50px;
 }
 
 .grid-container {
@@ -88,29 +171,44 @@ section {
 }
 
 .grid-item{
-  margin: 20px 0 20px 0;
+  margin: 0;
+}
+
+.grid-item p {
+  line-height: 1.25rem;
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 30px;
+  font-weight: normal;
+  margin: 0;
 }
 
 h4 {
   font-size: 12px;
-  text-transform: uppercase;
+  font-weight: normal;
+  letter-spacing: 0.025rem;
+  position: relative;
+  padding-left: 22px;
+  font-family: 'Space Mono', monospace;
+  margin: 0 0 15px 0;
 }
 
-/* h4::before {
-  content: "●";
-  padding-right: 10px;
-  font-size: 30px;
-  line-height: 0;
-} */
+h4:before {
+  content: "";
+    height: 14px;
+    width: 14px;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    background-color: #000000;
+    border-radius: 8px;
+}
 
 .heading {
   text-align: left;
   border-bottom: 1px dotted black;
-  border-top: 1px dotted black;
+  border-top: 5px solid black;
   height: 60px;
   margin-top: 100px;
   font-size: 24px;
@@ -118,7 +216,72 @@ h4 {
   align-items: center;
 }
 
-.who-uses-pa p{
-  font-size: 30px;
+.who-uses-pa h3 {
+  font-size: 45px;
+  padding: 0 15px 0 50px;
+  display: inline;
+  position: relative;
 }
+
+.who-uses-pa h3:before {
+  content: "";
+    height: 40px;
+    width: 40px;
+    left: 0;
+    top: 6px;
+    background-color: #000000;
+    border-radius: 20px;
+    position: absolute;
+}
+
+aside {
+  width: 800px;
+  padding: 15px;
+  background: black;
+  color: white;
+  margin: 100px 200px 0 0;
+  position: sticky;
+  top: 50px;
+  max-height: 450px;
+}
+
+aside div{
+  border-bottom: 1px solid white;
+}
+
+aside h2 {
+  font-size: 24px;
+  text-align: left;
+  letter-spacing: 0.05rem;
+  margin: 0 0 15px 0;
+}
+
+aside h3 {
+  margin-top: 10px;
+  font-size: 45px;
+}
+
+footer {
+  background: black;
+  color: white;
+  position: sticky;
+  bottom: 0;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p {
+  padding-right: 20px;
+}
+
+footer a {
+  height: 20px;
+}
+
+footer a:hover {
+  border: 1px solid white;
+}
+
 
